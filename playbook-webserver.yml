@@ -10,7 +10,7 @@
     networks: {"VM Network": "UICT LAN"}
     validate_certs: no
     power_on: yes
-    ovf: /ansible/TestOVA.ova
+    ovf: /ansible/files/G1Dev.ova
   delegate_to: localhost
   register: deploy_ova
   tags: ova
