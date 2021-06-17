@@ -33,9 +33,9 @@
     name: httpd
     state: present
 - name: ensure httpd is running
-    service:
-      name: httpd 
-      state: started
+  service:
+    name: httpd 
+    state: started
 - name: Open port 80 for http access
     firewalld:
       service: http
