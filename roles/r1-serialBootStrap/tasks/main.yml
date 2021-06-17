@@ -20,7 +20,7 @@
     verbosity: 4
   tags: ova
   
-  - name: This sets up an httpd webserver
+ - name: This sets up an httpd webserver
   community.vmware.vmware_guest_powerstate:
     hostname: 10.150.60.1
     username: student
