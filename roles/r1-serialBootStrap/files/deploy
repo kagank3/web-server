@@ -1,6 +1,9 @@
+---
+
 log_user 0
 log_file -a "/tmp/r1.log"
 
+tasks :
 
 - name: Find Guest's Folder using name
   vmware_guest_find:
