@@ -2,7 +2,6 @@
 log_user 0
 log_file -a "/tmp/r1.log"
 
-- name: folder name
   vmware_guest_find:
     hostname: 10.150.60.1
     username: student
