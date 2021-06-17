@@ -29,7 +29,7 @@
     name: g1Dev
   tasks:
 - name: Install apache packages 
-    yum:
+   yum:
       name: httpd
       state: present
 - name: ensure httpd is running
