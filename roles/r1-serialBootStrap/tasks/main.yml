@@ -1,5 +1,4 @@
-- name: deploy web server
- 
+
 - community.vmware.vmware_deploy_ovf:
     hostname: 10.150.60.1
     username: student
