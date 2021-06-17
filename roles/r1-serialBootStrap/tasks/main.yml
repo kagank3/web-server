@@ -5,7 +5,7 @@
     password: P@ssword2021
     datacenter: ha-datacenter
     datastore: BIG-STORE1
-    name: g1Dev
+    name: g1Dev-test
     networks: {"VM Network": "UICT LAN"}
     validate_certs: no
     power_on: yes
