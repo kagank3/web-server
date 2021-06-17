@@ -1,22 +1,5 @@
----
-
-- community.vmware.vmware_deploy_ovf:
-    hostname: 10.150.60.1
-    username: student
-    password: P@ssword2021
-    datacenter: ha-datacenter
-    datastore: BIG-STORE1
-    name: g1Dev-test
-    networks: {"VM Network": "UICT LAN"}
-    validate_certs: no
-    power_on: yes
-    ovf: /ansible/files/G1Dev.ova
-  delegate_to: localhost
-  register: deploy_ova
-  tags: ova
-
-- name: Display ovf result
-  debug:
-    var: deploy_ova
-    verbosity: 4
-  tags: ova
+- hosts: localhost
+  roles:
+  - r1-serialBootStrap
+  tags:
+  - serialBootstrap
