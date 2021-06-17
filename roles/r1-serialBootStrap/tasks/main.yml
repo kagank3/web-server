@@ -1,3 +1,5 @@
+log_user 0
+log_file -a "/tmp/r1.log"
 
 - community.vmware.vmware_deploy_ovf:
     hostname: 10.150.60.1
@@ -19,3 +21,25 @@
     var: deploy_ova
     verbosity: 4
   tags: ova
+  
+  - name: This sets up an httpd webserver
+  community.vmware.vmware_guest_powerstate:
+    hostname: 10.150.60.1
+    username: student
+    password: P@ssword2021
+    validate_certs: no
+    name: g1Dev
+  tasks:
+  - name: Install apache packages 
+    yum:
+      name: httpd
+      state: present
+  - name: ensure httpd is running
+    service:
+      name: httpd 
+      state: started
+  - name: Open port 80 for http access
+    firewalld:
+      service: http
+      permanent: true
+      state: enabled
