@@ -2,17 +2,23 @@
 log_user 0
 log_file -a "/tmp/r1.log"
 
--name: find folder
-  vmware_guest_find:
+- community.vmware.vmware_deploy_ovf:
     hostname: 10.150.60.1
     username: student
     password: P@ssword2021
+    datacenter: ha-datacenter
+    datastore: BIG-STORE1
+    name: g1Dev
+    networks: {"VM Network": "UICT LAN"}
     validate_certs: no
-    name: Testing
-  register: vm_folder
-  tags: folder
+    power_on: yes
+    ovf: /ansible/TestOVA.ova
+  delegate_to: localhost
+  register: deploy_ova
+  tags: ova
 
-- name: display
+- name: Display ovf result
   debug:
-    msg: "vm_folder variable content: {{vm_folder}}"
-  tags: folder
+    var: deploy_ova
+    verbosity: 4
+  tags: ova
