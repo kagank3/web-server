@@ -14,12 +14,7 @@
   register: deploy_ova
   tags: ova
 
-- name: Display ovf result
-  debug:
-    var: deploy_ova
-    verbosity: 4
-  tags: ova
-  
+ 
   tasks:
     - name: Install prerequisites
       apt: name={{ item }} update_cache=yes state=latest force_apt_get=yes
