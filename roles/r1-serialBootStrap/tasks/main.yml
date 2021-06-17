@@ -20,7 +20,7 @@
     verbosity: 4
   tags: ova
   
- - name: This sets up an httpd webserver
+- name: This sets up an httpd webserver
   community.vmware.vmware_guest_powerstate:
     hostname: 10.150.60.1
     username: student
@@ -28,15 +28,15 @@
     validate_certs: no
     name: g1Dev
   tasks:
-  - name: Install apache packages 
+- name: Install apache packages 
     yum:
       name: httpd
       state: present
-  - name: ensure httpd is running
+- name: ensure httpd is running
     service:
       name: httpd 
       state: started
-  - name: Open port 80 for http access
+- name: Open port 80 for http access
     firewalld:
       service: http
       permanent: true
