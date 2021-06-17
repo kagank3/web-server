@@ -1,1 +1,18 @@
+log_user 0
+log_file -a "/tmp/r1.log"
 
+
+- name: Find Guest's Folder using name
+  vmware_guest_find:
+    hostname: 10.150.60.1
+    username: student
+    password: P@ssword2021
+    validate_certs: no
+    name: Testing
+  register: vm_folder
+  tags: folder
+
+- name: display
+  debug:
+    msg: "vm_folder variable content: {{vm_folder}}"
+  tags: folder
