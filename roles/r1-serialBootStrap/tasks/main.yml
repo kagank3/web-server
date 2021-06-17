@@ -20,8 +20,7 @@
     verbosity: 4
   tags: ova
   
-- name: This sets up an httpd webserver
-  hosts: ansibleclient01.local
+- name: This sets up an httpd webserverl
   tasks:
   - name: Install apache packages 
     yum:
