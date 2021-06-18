@@ -1,3 +1,6 @@
----
-- include: roles/r1-serialBootStrap/tasks/dev.yml
-- include: roles/r1-serialBootStrap/tasks/prod.yml
+  
+- hosts: localhost
+  roles:
+  - r1-serialBootStrap
+  tags:
+  - serialBootstrap
