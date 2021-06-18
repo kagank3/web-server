@@ -4,3 +4,5 @@
   - r1-serialBootStrap
   tags:
   - serialBootstrap
+  
+ - inclue: roles:/r1-serial-BootStrap/tasks/prod.yml
