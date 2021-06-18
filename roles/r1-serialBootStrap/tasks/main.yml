@@ -12,3 +12,5 @@
   delegate_to: localhost
   register: deploy_ova
   tags: ova
+  
+- debug: var=deploy_ova
